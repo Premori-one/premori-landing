@@ -1,0 +1,48 @@
+---
+export interface PortfolioEntry {
+  name: string;
+  href?: string;
+  domain?: string;
+  desc: string;
+  state?: 'live' | 'coming' | 'stealth';
+}
+
+interface Props {
+  items: PortfolioEntry[];
+}
+
+const { items } = Astro.props;
+
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+<ol class="portfolio">
+  {items.map((item, i) => {
+    const num = pad(i + 1);
+    const isLink = Boolean(item.href);
+    const Tag = isLink ? 'a' : 'div';
+    const linkProps = isLink
+      ? { href: item.href, target: '_blank', rel: 'noopener noreferrer' }
+      : {};
+    return (
+      <li class="portfolio-item">
+        <Tag class="portfolio-link" {...linkProps}>
+          <span class="portfolio-num">{num}</span>
+          <div class="portfolio-body">
+            <h3 class="portfolio-name" set:html={item.name} />
+            <p class="portfolio-desc">{item.desc}</p>
+          </div>
+          <div class={`portfolio-meta ${item.state === 'coming' ? 'is-coming' : ''} ${item.state === 'stealth' ? 'is-stealth' : ''}`}>
+            {item.state === 'coming' && <span>— soon</span>}
+            {item.state === 'stealth' && <span>— stealth</span>}
+            {item.state !== 'coming' && item.state !== 'stealth' && item.domain && (
+              <>
+                <span>{item.domain}</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </>
+            )}
+          </div>
+        </Tag>
+      </li>
+    );
+  })}
+</ol>

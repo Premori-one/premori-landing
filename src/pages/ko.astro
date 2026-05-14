@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+import Portfolio from '../components/Portfolio.astro';
+
+const products = [
+  {
+    name: 'Koikoi',
+    href: 'https://m.cafe.naver.com/ca-fe/web/cafes/31360575/profile',
+    domain: 'cafe.naver.com',
+    desc: '도쿄·오사카·후쿠오카·나고야에서 매주 열리는 한일 로테이션 소개팅. 새로운 인연이 시작되는 플랫폼.',
+    state: 'live',
+  },
+  {
+    name: 'DearJ',
+    href: 'https://dearj.app',
+    domain: 'dearj.app',
+    desc: '검증된 남성이 프로필을 올려두면, 일본 여성이 직접 만남을 신청하는 플랫폼.',
+    state: 'live',
+  },
+  {
+    name: 'Alpha Evolution',
+    href: 'https://alphaevolution.club',
+    domain: 'alphaevolution.club',
+    desc: '일본 여성에게 자연스럽게 매력적으로 보이는 \'분위기 이케맨\'을 만드는, 1:1 남성 스타일링 컨설팅.',
+    state: 'live',
+  },
+  {
+    name: 'Koikoi Class',
+    href: 'https://class.koikoi.one/',
+    domain: 'class.koikoi.one',
+    desc: '일본 현지 대학을 졸업한 선생님과 일대일로 진행되는 일본어 회화 수업.',
+    state: 'live',
+  },
+  {
+    name: 'Enmusubi',
+    desc: '한국 남성과 일본 여성을 이어주는 앱. 준비 중입니다.',
+    state: 'coming',
+  },
+];
+---
+<Base
+  lang="ko"
+  title="Premori — 사람과 사람을, 조금 더 가깝게"
+  description="Premori는 한국과 일본에서 만남과 연결을 만드는 작은 스튜디오입니다. Koikoi, DearJ, 그리고 다음에 올 것들."
+>
+  <section class="hero">
+    <p class="kicker reveal reveal-1">Korea · Japan · Australia · 2025—</p>
+    <h1 class="hero-title reveal reveal-2">
+      사람과 사람을,<br />
+      <em>조금 더</em> 가깝게
+    </h1>
+    <p class="hero-lede reveal reveal-3">
+      Premori는 한국·일본·호주에 걸쳐, 사람과 사람을 이어주는 서비스를 만드는 회사입니다.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-eyebrow">/ 01 — Portfolio</span>
+      <h2 class="section-title">Premori가 운영하는 서비스</h2>
+    </div>
+    <Portfolio items={products} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-eyebrow">/ 02 — Team</span>
+      <h2 class="section-title">Premori를 만드는 사람들</h2>
+    </div>
+
+    <div class="team">
+      <article class="team-member">
+        <header>
+          <p class="team-name">Kyuha</p>
+          <span class="team-role">CEO · Founder</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            서울 출신으로, 서울대학교를 졸업했습니다. 한국 금융 업계에서 5년간 일하며 사려 깊고 안정된 삶을 사는 진지한 남성들의 네트워크를 만들었고, 그것이 Premori의 시작이 되었습니다.
+          </p>
+          <p>
+            한국·일본·호주에는 진지한 만남을 찾는 좋은 사람들이 가득하다는 믿음 위에, Premori는 그들이 서로를 만날 수 있도록 돕는 일을 합니다.
+          </p>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <header>
+          <p class="team-name">Ken</p>
+          <span class="team-role">CFO &amp; CTO</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            NYU Stern에서 MBA를 마치고, 뉴욕 PwC에서 사모펀드·헤지펀드·부동산 클라이언트를 자문하면서, 동시에 소프트웨어·인프라 팀을 리드했습니다. 그 양쪽의 경험이 지금 Premori의 기술과 재무 운영에 그대로 들어가 있습니다.
+          </p>
+          <p>
+            업무 외에는 다양한 문화와 그 사이를 오가는 사람들에 관심이 많고, 그 관점이 Premori가 만드는 서비스에 자연스럽게 녹아 있습니다.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Base>

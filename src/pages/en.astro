@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import Portfolio from '../components/Portfolio.astro';
+
+const products = [
+  {
+    name: 'Koikoi AU',
+    href: 'https://koikoi.com.au',
+    domain: 'koikoi.com.au',
+    desc: 'Curated dating events in Melbourne, Sydney, Brisbane, and Auckland. The same in-person, in-the-room model, brought to a new audience.',
+    state: 'live',
+  },
+];
+---
+<Base
+  lang="en"
+  title="Premori — We build products that help people meet"
+  description="Premori works across Korea, Japan, and Australia. We build products that help people meet — events, language, and what comes next."
+>
+  <section class="hero">
+    <p class="kicker reveal reveal-1">Korea · Japan · Australia · 2025—</p>
+    <h1 class="hero-title reveal reveal-2">
+      We build products<br />
+      that help people<br />
+      <em>meet</em>
+    </h1>
+    <p class="hero-lede reveal reveal-3">
+      Premori works across Korea, Japan, and Australia on products that help one person meet another — across rooms, across languages, across countries.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-eyebrow">/ 01 — Portfolio</span>
+      <h2 class="section-title">Premori's services in Australia</h2>
+    </div>
+    <Portfolio items={products} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-eyebrow">/ 02 — Team</span>
+      <h2 class="section-title">The people behind Premori</h2>
+    </div>
+
+    <div class="team">
+      <article class="team-member">
+        <header>
+          <p class="team-name">Kyuha</p>
+          <span class="team-role">CEO · Founder</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            From Seoul, and a graduate of Seoul National University. After five years in Korea's finance industry, he built a wide network of intelligent, sincere men — thoughtful in character and stable in their lives — and turned that network into the foundation of what became Premori.
+          </p>
+          <p>
+            He believes Korea, Japan, and Australia are all full of people genuinely looking for serious relationships, and Premori exists to help them find each other.
+          </p>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <header>
+          <p class="team-name">Ken</p>
+          <span class="team-role">CFO &amp; CTO</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            Holds an MBA from NYU Stern and spent his career at PwC in New York — advising private equity, hedge fund, and real estate clients on the finance side, and leading software and infrastructure teams on the technical side. That dual background sits underneath everything Premori builds and runs.
+          </p>
+          <p>
+            Outside of work, Ken is curious about cultures and the people who move between them — the perspective that shapes how Premori is built.
+          </p>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <header>
+          <p class="team-name">Andrew</p>
+          <span class="team-role">Director</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            Holds a Bachelor of Commerce (Accounting) from Monash University in Melbourne, and has spent years as an entrepreneur and corporate management professional. He brings that analytical finance background and hands-on business leadership to Koikoi's expansion across Australia and New Zealand.
+          </p>
+          <p>
+            Andrew met his wife in Australia and has been happily married ever since — a quiet reminder of why this work matters to him.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Base>

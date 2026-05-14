@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  lang: 'ko' | 'ja' | 'en';
+  title: string;
+  description: string;
+}
+
+const { lang, title, description } = Astro.props;
+
+const localeLabels = {
+  ko: '한국어',
+  ja: '日本語',
+  en: 'English',
+};
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f3eee5" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="Premori" />
+    <meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : lang === 'ja' ? 'ja_JP' : 'en_US'} />
+
+    <link rel="alternate" hreflang="ko" href="https://www.premori.net/ko" />
+    <link rel="alternate" hreflang="ja" href="https://www.premori.net/ja" />
+    <link rel="alternate" hreflang="en" href="https://www.premori.net/en" />
+    <link rel="alternate" hreflang="x-default" href="https://www.premori.net/ko" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@400;500&family=Shippori+Mincho+B1:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a href={`/${lang}`} class="wordmark" aria-label="Premori — home">Premori</a>
+        <nav class="locale-switch" aria-label="Language">
+          <a href="/ko" aria-current={lang === 'ko' ? 'page' : undefined}>{localeLabels.ko}</a>
+          <span aria-hidden="true">·</span>
+          <a href="/ja" aria-current={lang === 'ja' ? 'page' : undefined}>{localeLabels.ja}</a>
+          <span aria-hidden="true">·</span>
+          <a href="/en" aria-current={lang === 'en' ? 'page' : undefined}>{localeLabels.en}</a>
+        </nav>
+      </header>
+
+      <slot />
+
+      <footer class="footer">
+        <div>© Premori, 2025 —</div>
+        <div class="footer-coords">
+          <a href="mailto:contact@premori.net">contact@premori.net</a>
+          <span>Korea · Japan · Australia</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Portfolio from '../components/Portfolio.astro';
+
+const products = [
+  {
+    name: 'Koikoi',
+    href: 'https://koikoi.one',
+    domain: 'koikoi.one',
+    desc: '東京・大阪・福岡・名古屋で開催する、日韓の出会いイベント。毎週、はじめましての人と向き合う場所。',
+    state: 'live',
+  },
+  {
+    name: 'Enmusubi',
+    href: 'https://enmusubi.app',
+    domain: 'enmusubi.app',
+    desc: '日本の女性のための、丁寧なマッチングサービス。プロフィールを書く時間まで含めて、ひとつの体験として。',
+    state: 'live',
+  },
+  {
+    name: 'Kankare',
+    href: 'https://kankare.app',
+    domain: 'kankare.app',
+    desc: '日本の女性向けに、韓国の男性とつながる新しい場所。準備中です。',
+    state: 'live',
+  },
+  {
+    name: 'Careerlink',
+    desc: '日本で働きたい韓国の人材と、日本企業をつなぐ人材紹介サービス。',
+    state: 'coming',
+  },
+];
+---
+<Base
+  lang="ja"
+  title="Premori — 人と人を、もう少しだけ近くに"
+  description="Premoriは、日本と韓国を行き来しながら、人と人が出会うための小さな道具をつくるスタジオです。Koikoi、Enmusubi、そして次に来るもの。"
+>
+  <section class="hero">
+    <p class="kicker reveal reveal-1">Korea · Japan · Australia · 2025—</p>
+    <h1 class="hero-title reveal reveal-2">
+      人と人を、<br />
+      <em>もう少しだけ</em><br />
+      近くに
+    </h1>
+    <p class="hero-lede reveal reveal-3">
+      Premoriは、日本・韓国・オーストラリアにまたがって、人と人が出会い、近づくための小さな道具をつくっているスタジオです。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-eyebrow">/ 01 — Portfolio</span>
+      <h2 class="section-title">Premoriが運営するサービス</h2>
+    </div>
+    <Portfolio items={products} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="section-eyebrow">/ 02 — Team</span>
+      <h2 class="section-title">Premoriをつくっている人たち</h2>
+    </div>
+
+    <div class="team">
+      <article class="team-member">
+        <header>
+          <p class="team-name">Kyuha</p>
+          <span class="team-role">CEO · Founder</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            ソウル出身、ソウル大学校卒。韓国の金融業界で5年間働きながら、思慮深く、生活に芯のある男性たちのネットワークを築き、それがPremoriのはじまりになりました。
+          </p>
+          <p>
+            韓国・日本・オーストラリアには、真剣な出会いを探している良い人たちがたくさんいる ― その確信のもと、Premoriはその人たちが互いに出会えるように働いています。
+          </p>
+        </div>
+      </article>
+
+      <article class="team-member">
+        <header>
+          <p class="team-name">Ken</p>
+          <span class="team-role">CFO &amp; CTO</span>
+        </header>
+        <div class="team-bio">
+          <p>
+            NYU SternでMBAを取得し、ニューヨークのPwCでプライベートエクイティ・ヘッジファンド・不動産のクライアントを支援しながら、ソフトウェアとインフラのチームをリードしてきました。その両方の経験が、いまPremoriのテクノロジーと財務をそのまま支えています。
+          </p>
+          <p>
+            仕事の外では、異なる文化と、その間を行き来する人たちに関心があります。その視点が、Premoriのつくり方に自然に重なっています。
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</Base>
