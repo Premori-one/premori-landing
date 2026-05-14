@@ -248,10 +248,6 @@ a {
 .portfolio-item {
   border-bottom: 1px solid var(--rule);
   padding: clamp(1.5rem, 3vw, 2.25rem) 0;
-  display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
-  gap: clamp(1rem, 3vw, 2.5rem);
-  align-items: baseline;
   position: relative;
   transition: background 250ms var(--ease);
 }
@@ -275,7 +271,17 @@ a {
 .portfolio-item:hover::before { opacity: 1; }
 
 .portfolio-link {
-  display: contents;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: baseline;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  outline-offset: 0.5rem;
+}
+
+.portfolio-link:focus-visible {
+  outline-color: var(--oxblood);
 }
 
 .portfolio-num {
@@ -489,7 +495,7 @@ a {
   .about-grid {
     grid-template-columns: 1fr;
   }
-  .portfolio-item {
+  .portfolio-link {
     grid-template-columns: 2.5rem minmax(0, 1fr);
     grid-template-rows: auto auto;
     row-gap: 0.5rem;
